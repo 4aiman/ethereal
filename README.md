@@ -17,6 +17,18 @@ Original thread can be found here: https://forum.minetest.net/viewtopic.php?pid=
 *Note: I only* **update** *this repo!*
 
 ###Changes:
+*1.10*
+
+    Added Stone Ladders (another use for cobble)
+
+    Craft 5x Gravel in X pattern to give 5 dirt, and 5x dirt in X pattern for 5 sand
+
+    Added Acacia tree's to desert biome (a nice pink wood to build with, thanks to VanessaE for textures)
+
+    Added Acacia fences and gates
+    
+    Added Vines, craftable with 2x3 leaves
+    
 *1.09*
 
     Fixed Quicksand bug where player see's only black when sinking instead of yellow effect, note this will only work on new maps or newly generated areas of map containing quicksand

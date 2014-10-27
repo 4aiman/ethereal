@@ -1,4 +1,25 @@
 -- Define Trunks and Wood
+minetest.register_node("ethereal:acacia_trunk", {			-- Acacia Trunk (thanks to VanessaE for acacia textures)
+	description = "Acacia Trunk",
+	tiles = {"moretrees_acacia_trunk_top.png", "moretrees_acacia_trunk_top.png", "moretrees_acacia_trunk.png"},
+	groups = {tree=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	sounds = default.node_sound_wood_defaults(),
+	paramtype2 = "facedir",
+})
+
+minetest.register_node("ethereal:acacia_wood", {			-- Acacia Wood
+	description = "Acacia Wood",
+	tiles = {"moretrees_acacia_wood.png"},
+	groups = {wood=1,choppy=2,oddly_breakable_by_hand=1,flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_craft({
+	output = "ethereal:acacia_wood 4",
+	type = shapeless,
+	recipe = {{"ethereal:acacia_trunk"}}
+})
+
 minetest.register_node("ethereal:willow_trunk", {		-- Willow Trunk
 	description = "Willow Trunk",
 	tiles = {"willow_trunk_top.png", "willow_trunk_top.png", "willow_trunk.png"},
@@ -123,7 +144,7 @@ minetest.register_craft({
 minetest.register_node("ethereal:scorched_tree", {		-- Scorched Trunk
 	description = "Scorched Tree",
 	tiles = {"scorched_tree_top.png", "scorched_tree_top.png", "scorched_tree.png"},
-	groups = {choppy=2,oddly_breakable_by_hand=1,flammable=1},
+	groups = {wood=1,choppy=2,oddly_breakable_by_hand=1,flammable=1},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
 })
@@ -131,7 +152,7 @@ minetest.register_node("ethereal:scorched_tree", {		-- Scorched Trunk
 minetest.register_node("ethereal:mushroom_trunk", {		-- Mushroom Trunk
 	description = "Mushroom",
 	tiles = {"mushroom_trunk_top.png", "mushroom_trunk_top.png", "mushroom_trunk.png"},
-	groups = {choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	groups = {wood=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
 })

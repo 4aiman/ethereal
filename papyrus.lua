@@ -1,21 +1,6 @@
--- Re-register Papyrus (dug papyrus makes any above fall)
-minetest.register_node(":default:papyrus", {
-	description = "Papyrus",
-	drawtype = "plantlike",
-	tiles = {"default_papyrus.png"},
-	inventory_image = "default_papyrus.png",
-	wield_image = "default_papyrus.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = true,
-	is_ground_content = true,
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
-	},
-	groups = {snappy=3,flammable=2,attached_node=1},
-	sounds = default.node_sound_leaves_defaults(),
-})
+-- Override default Papyrus to make it walkable
+minetest.override_item("default:papyrus", {walkable=true, sunlight_propagates=true})
+
 
 -- Have Papyrus grow up to 4 high and Bamboo grow up to 5 in height (shared abm)
 minetest.register_abm({

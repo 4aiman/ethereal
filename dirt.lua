@@ -1,3 +1,6 @@
+-- Override default Dirt (to stop caves cutting away dirt)
+minetest.override_item("default:dirt", {is_ground_content = false})
+
 -- Green Dirt
 minetest.register_node("ethereal:green_dirt", {
 	description = "Green Dirt",
@@ -14,7 +17,6 @@ minetest.register_node("ethereal:dry_dirt", {
 	tiles = {"ethereal_dry_dirt.png"},
 	is_ground_content = false,
 	groups = {crumbly=3},
-	drop = "ethereal:dry_dirt",
 	sounds = default.node_sound_dirt_defaults()
 })
 
@@ -85,7 +87,7 @@ minetest.register_abm({
         end
 })
 
--- If Grass Devoid of Light, Change to Dirt
+-- If Grass devoid of light, change to Dirt
 minetest.register_abm({
 	nodenames = {"group:ethereal_grass"},
 	interval = 5,

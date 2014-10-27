@@ -42,6 +42,8 @@ gate.type = {
 	{"palm",		"Palm Wood",	"moretrees_palm_wood.png",	"ethereal:palm_wood"},
 	{"banana",		"Banana Wood",	"banana_wood.png",			"ethereal:banana_wood"},
 	{"mushroom",	"Mushroom",		"mushroom_trunk.png",		"ethereal:mushroom_trunk"},
+	{"acacia",		"Acacia Wood",	"moretrees_acacia_wood.png","ethereal:acacia_wood"},
+
 }
 
 for _, row in ipairs(gate.type) do

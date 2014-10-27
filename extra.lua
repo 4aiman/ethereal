@@ -1,3 +1,67 @@
+-- Vines
+minetest.register_node("ethereal:vine", {
+	description = "Vine",
+	drawtype = "signlike",
+	tiles = {"vine.png"},
+	inventory_image = "vine.png",
+	wield_image = "vine.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {choppy=3, oddly_breakable_by_hand=1},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+minetest.register_craft({
+	output = "ethereal:vine 2",
+	recipe = {
+		{"group:leaves", "group:leaves", ""},
+		{"group:leaves", "group:leaves", ""},
+		{"group:leaves", "group:leaves", ""},
+	}
+})
+
+-- stone Ladder
+minetest.register_node("ethereal:stone_ladder", {
+	description = "Stone Ladder",
+	drawtype = "signlike",
+	tiles = {"stone_ladder.png"},
+	inventory_image = "stone_ladder.png",
+	wield_image = "stone_ladder.png",
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	walkable = false,
+	climbable = true,
+	is_ground_content = false,
+	selection_box = {
+		type = "wallmounted",
+		--wall_top = = <default>
+		--wall_bottom = = <default>
+		--wall_side = = <default>
+	},
+	groups = {cracky=3, oddly_breakable_by_hand=1},
+	legacy_wallmounted = true,
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_craft({
+	output = "ethereal:stone_ladder 4",
+	recipe = {
+		{"default:cobble", "", "default:cobble"},
+		{"default:cobble", "default:cobble", "default:cobble"},
+		{"default:cobble", "", "default:cobble"},
+	}
+})
+
 -- Paper Wall
 minetest.register_node("ethereal:paper_wall", {
 	drawtype = "nodebox",
@@ -126,8 +190,6 @@ minetest.register_craft({
 minetest.register_node("ethereal:quicksand", {
 	description = "Quicksand",
 	tiles = {"default_sand.png"},
-	--drawtype = "glasslike",
-	--paramtype = "light",
 	drop = "default:sand",
 	liquid_viscosity = 15,
 	liquidtype = "source",

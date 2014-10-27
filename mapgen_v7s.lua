@@ -137,7 +137,7 @@ minetest.register_biome({
 
 minetest.register_biome({
 	name			= "quicksand",
-	node_top		= "ethereal:quicksand2",		depth_top = 3,
+	node_top		= "ethereal:quicksand2",	depth_top = 3,
 	node_filler		= "default:gravel",			depth_filler = 1,
 	height_min		= 1,						height_max = 1,
 	heat_point		= 50,						humidity_point = 38,
@@ -191,7 +191,7 @@ minetest.register_decoration({							-- Redwood Tree
 	deco_type = "schematic",
 	place_on = {"bakedclay:red","bakedclay:orange"},
 	sidelen = 16,
-	fill_ratio = 0.025,
+	fill_ratio = 0.01, -- was 0.025
 	biomes = {"mesa"},
 	schematic = path.."redwood.mts",
 	flags = "place_center_x, place_center_z",
@@ -325,6 +325,16 @@ minetest.register_decoration({							-- Orange Tree
 	fill_ratio = 0.005,
 	biomes = {"prairie"},
 	schematic = path.."orangetree.mts",
+	flags = "place_center_x, place_center_z",
+})
+
+minetest.register_decoration({							-- Acacia Tree
+	deco_type = "schematic",
+	place_on = {"default:desert_sand"},
+	sidelen = 16,
+	fill_ratio = 0.004,
+	biomes = {"desert"},
+	schematic = path.."acaciatree.mts",
 	flags = "place_center_x, place_center_z",
 })
 
@@ -538,7 +548,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				if minetest.get_node({x=x,y=1,z=z}).name == "default:sand" and
 					minetest.find_node_near({x=x,y=1,z=z}, 1, "default:water_source") then
 					schematic = path.."palmtree.mts"
-					minetest.place_schematic({x=x-3,y=2,z=z-4}, schematic, 0, '', 0)
+					minetest.place_schematic({x=x-4,y=2,z=z-4}, schematic, 0, '', 0)
 				end
 			end
 		end

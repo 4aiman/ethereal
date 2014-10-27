@@ -7,6 +7,27 @@ end
 
 --= Define leaves for ALL trees (and Mushroom Tops)
 
+-- Acacia Leaves
+minetest.register_node("ethereal:acacia_leaves", {
+	description = "Acacia Leaves",
+	drawtype = leaftype,
+	tiles = {"moretrees_acacia_leaves.png"},
+	inventory_image = "moretrees_acacia_leaves.png",
+	paramtype = "light",
+	walkable = false,
+	visual_scale = 1.2,
+	waving = 1,
+	groups = {snappy=3, leafdecay=3, leaves=1, flammable=2},
+	drop = {
+		max_items = 1,
+		items = {
+			{	items = {"ethereal:acacia_sapling"}, rarity = 50},
+			{	items = {"ethereal:acacia_leaves"}}
+		}
+	},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
 -- Willow Twig
 minetest.register_node("ethereal:willow_twig", {
 	description = "Willow Twig",
@@ -235,6 +256,12 @@ minetest.register_node("ethereal:mushroom", {
 		}
 	},
 	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "ethereal:mushroom",
+	burntime = 10,
 })
 
 -- Mushroom Pore (Spongelike block inside mushrooms that has special properties)

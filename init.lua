@@ -1,6 +1,6 @@
 --[[
 
-	Minetest Ethereal Mod 1.09
+	Minetest Ethereal Mod 1.10 (8th October 2014)
 
 	Created by ChinChow
 
@@ -35,6 +35,3 @@ dofile(minetest.get_modpath("ethereal").."/extra.lua")
 dofile(minetest.get_modpath("ethereal").."/sealife.lua")
 dofile(minetest.get_modpath("ethereal").."/fences.lua")
 dofile(minetest.get_modpath("ethereal").."/gates.lua")
-
--- Xanadu server Only
-dofile(minetest.get_modpath("ethereal").."/plantpack.lua")

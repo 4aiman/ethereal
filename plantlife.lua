@@ -260,8 +260,11 @@ minetest.register_node("ethereal:bamboo", {
 		type = "fixed",
 		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
 	},
-	groups = {choppy=3, oddly_breakable_by_hand=1, flammable=2, attached_node=1},
+	groups = {choppy=3, oddly_breakable_by_hand=1, flammable=2},--, attached_node=1},
 	sounds = default.node_sound_leaves_defaults(),
+	after_dig_node = function(pos, node, metadata, digger)
+		default.dig_up(pos, node, digger)
+	end,
 })
 
 -- Bamboo Sprout
@@ -400,6 +403,16 @@ minetest.register_craft({
 		{"default:cobble", "", "default:cobble"},
 		{"", "default:cobble", ""},
 		{"default:cobble", "", "default:cobble"},
+	}
+})
+
+-- Sand (5x gravel in X pattern gives 5 sand)
+minetest.register_craft({
+	output = "default:sand 5",
+	recipe = {
+		{"default:gravel", "", "default:gravel"},
+		{"", "default:gravel", ""},
+		{"default:gravel", "", "default:gravel"},
 	}
 })
 
