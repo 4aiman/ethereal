@@ -17,6 +17,16 @@ Original thread can be found here: https://forum.minetest.net/viewtopic.php?pid=
 *Note: I only* **update** *this repo!*
 
 ###Changes:
+*1.11*
+
+    Added Stairs for Ethereal wood types, mushroom, dry dirt, obsidian brick and clay
+    
+    Added Green Coral which can be used as green dye
+    
+    Craft 5x Ice in X pattern to give 5x Snow
+    
+    Added Snow and Ice Bricks with their own stairs and slabs which melt when near heat
+    
 *1.10*
 
     Added Stone Ladders (another use for cobble)
