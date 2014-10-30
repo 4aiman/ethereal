@@ -43,7 +43,7 @@ ethereal.place_tree = function (pos, ofx, ofz, schem)
 	minetest.env:set_node(pos, {name="air"})
 	pos.x = pos.x - ofx
 	pos.z = pos.z - ofz
-	minetest.place_schematic(pos, minetest.get_modpath("ethereal").."/schematics/"..schem..".mts", "random", {}, false );
+	minetest.place_schematic(pos, minetest.get_modpath("ethereal").."/schematics/"..schem..".mts", "0", {}, false );
 end
 
 -- Grow saplings
