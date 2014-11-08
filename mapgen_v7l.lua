@@ -543,7 +543,7 @@ minetest.register_decoration({					-- Carrot, Cucumber, Potato, Tomato, Corn, Co
 	sidelen = 80,
 	fill_ratio = 0.05,
 	biomes = {"grass", "prairie"},
-	decoration = {"farming:carrot_7", "farming:cucumber_4", "farming:potato_3", "farming:tomato_7", "farming:corn_8", "farming:coffee_5", "farming:raspberry_4", "farming:rhubarb_3"},
+	decoration = {"farming:carrot_7", "farming:cucumber_4", "farming:potato_3", "farming:tomato_7", "farming:corn_8", "farming:coffee_5", "farming:raspberry_4", "farming:rhubarb_3", "farming:blueberry_4"},
 })
 
 minetest.register_decoration({					-- Melon, Pumpkin

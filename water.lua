@@ -1,3 +1,50 @@
+-- Ice Brick
+minetest.register_node("ethereal:icebrick", {
+	description = "Ice Brick",
+	tiles = {"brick_ice.png"},
+	paramtype = "light",
+	freezemelt = "default:water_source",
+	groups = {cracky=3, melts=1},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft({
+	output = 'ethereal:icebrick 4',
+	recipe = {
+		{'default:ice', 'default:ice'},
+		{'default:ice', 'default:ice'},
+	}
+})
+
+-- Snow Brick
+minetest.register_node("ethereal:snowbrick", {
+	description = "Snow Brick",
+	tiles = {"brick_snow.png"},
+	paramtype = "light",
+--	leveled = 7,
+	drawtype = "nodebox",
+	freezemelt = "default:water_source",
+	groups = {crumbly=3, melts=1},
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name="default_snow_footstep", gain=0.25},
+		dug = {name="default_snow_footstep", gain=0.75},
+	}),
+	on_construct = function(pos)
+		pos.y = pos.y - 1
+		if minetest.get_node(pos).name == "default:dirt_with_grass" then
+			minetest.set_node(pos, {name="default:dirt_with_snow"})
+		end
+	end,
+})
+
+minetest.register_craft({
+	output = 'ethereal:snowbrick 4',
+	recipe = {
+		{'default:snowblock', 'default:snowblock'},
+		{'default:snowblock', 'default:snowblock'},
+	}
+})
+
 -- Over time Cobble placed in water changes to Mossy Cobble
 minetest.register_abm({
 	nodenames = {"default:cobble"},
@@ -11,7 +58,7 @@ minetest.register_abm({
 
 -- If Crystal Spike, Crystal Dirt, Snow near Water, change Water to Ice
 minetest.register_abm({
-	nodenames = {"ethereal:crystal_spike", "ethereal:crystal_dirt", "default:snow", "default:snowblock"},
+	nodenames = {"ethereal:crystal_spike", "ethereal:crystal_dirt", "default:snow", "default:snowblock", "ethereal:snowbrick"},
 	neighbors = {"default:water_source"},
 	interval = 15,
 	chance = 2,
@@ -28,14 +75,19 @@ minetest.register_abm({
 
 -- If Heat Source near Ice or Snow then melt
 minetest.register_abm({
-	nodenames = {"default:ice", "default:snowblock", "default:snow", "default:dirt_with_snow"},
+	--nodenames = {"default:ice", "default:snowblock", "default:snow", "default:dirt_with_snow"},
+	nodenames = {"group:melts", "default:dirt_with_snow"},
 	neighbors = {"group:hot"},
 	interval = 10,
 	chance = 2,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-		if node.name == "default:ice" or node.name == "default:snowblock" then
+
+		--print ("NODE:", string.split(node.name, ":")[1])
+
+		if node.name == "default:ice" or node.name == "default:snowblock" 
+		or node.name == "ethereal:icebrick" or node.name == "ethereal:snowbrick" then
 			minetest.add_node(pos,{name="default:water_source"})
-		elseif node.name == "default:snow" then
+		elseif node.name == "default:snow" or string.split(node.name, ":")[1]then
 			minetest.add_node(pos,{name="default:water_flowing"})
 		elseif node.name == "default:dirt_with_snow" then
 			minetest.add_node(pos,{name="default:dirt_with_grass"})

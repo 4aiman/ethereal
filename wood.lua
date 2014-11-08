@@ -144,7 +144,7 @@ minetest.register_craft({
 minetest.register_node("ethereal:scorched_tree", {		-- Scorched Trunk
 	description = "Scorched Tree",
 	tiles = {"scorched_tree_top.png", "scorched_tree_top.png", "scorched_tree.png"},
-	groups = {wood=1,choppy=2,oddly_breakable_by_hand=1,flammable=1},
+	groups = {tree=1,choppy=2,oddly_breakable_by_hand=1,flammable=1},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
 })
@@ -152,7 +152,7 @@ minetest.register_node("ethereal:scorched_tree", {		-- Scorched Trunk
 minetest.register_node("ethereal:mushroom_trunk", {		-- Mushroom Trunk
 	description = "Mushroom",
 	tiles = {"mushroom_trunk_top.png", "mushroom_trunk_top.png", "mushroom_trunk.png"},
-	groups = {wood=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	groups = {tree=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
 })

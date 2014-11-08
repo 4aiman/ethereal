@@ -75,11 +75,10 @@ minetest.register_craft({
 		}
 })
 
--- Sift through 4 Dirt Blocks to find Worm
+-- Sift through 2 Dirt Blocks to find Worm
 minetest.register_craft({
 	output = "ethereal:worm",
 	recipe = {
-		{"default:dirt","default:dirt"},
 		{"default:dirt","default:dirt"},
 	}
 })

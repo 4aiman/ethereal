@@ -79,6 +79,25 @@ minetest.register_craft( {
 	recipe = {"ethereal:coral4",},
 })
 
+-- Green Coral
+minetest.register_node("ethereal:coral5", {
+	description = "Green Coral",
+	drawtype = "plantlike",
+	tiles = {"coral5.png"},
+	inventory_image = "coral5.png",
+	paramtype = "light",
+	selection_box = {type = "fixed", fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5}},
+	light_source = 3,
+	groups = {snappy=3},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = "dye:green 3",
+	recipe = {"ethereal:coral5",},
+})
+
 -- Undersea Sand
 minetest.register_node("ethereal:sandy", {
 	description = "Sandy",
@@ -110,7 +129,7 @@ minetest.register_abm({
 
 	action = function(pos, node)
 
-		sel = math.random(1,4)
+		sel = math.random(1,5)
 		if sel == 1 or minetest.get_node(pos).name == "ethereal:seaweed" then
 
 			local height = 0

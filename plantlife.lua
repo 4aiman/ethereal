@@ -406,13 +406,33 @@ minetest.register_craft({
 	}
 })
 
--- Sand (5x gravel in X pattern gives 5 sand)
+-- Dirt (5x gravel in X pattern gives 5 dirt)
 minetest.register_craft({
-	output = "default:sand 5",
+	output = "default:dirt 5",
 	recipe = {
 		{"default:gravel", "", "default:gravel"},
 		{"", "default:gravel", ""},
 		{"default:gravel", "", "default:gravel"},
+	}
+})
+
+-- Sand (5x dirt in X pattern gives 5 sand)
+minetest.register_craft({
+	output = "default:sand 5",
+	recipe = {
+		{"default:dirt", "", "default:dirt"},
+		{"", "default:dirt", ""},
+		{"default:dirt", "", "default:dirt"},
+	}
+})
+
+-- Snow (5x ice in X pattern gives 5 snow)
+minetest.register_craft({
+	output = "default:snow 5",
+	recipe = {
+		{"default:ice", "", "default:ice"},
+		{"", "default:ice", ""},
+		{"default:ice", "", "default:ice"},
 	}
 })
 

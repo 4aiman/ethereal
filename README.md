@@ -17,6 +17,12 @@ Original thread can be found here: https://forum.minetest.net/viewtopic.php?pid=
 *Note: I only* **update** *this repo!*
 
 ###Changes:
+*1.12*
+
+    Added ability to disable biomes in the init.lua file by setting to 1 (enable) or 0 (disable)
+
+    Supports Framing Redo 1.10 foods
+    
 *1.11*
 
     Added Stairs for Ethereal wood types, mushroom, dry dirt, obsidian brick and clay
